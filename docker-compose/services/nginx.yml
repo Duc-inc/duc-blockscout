@@ -15,8 +15,11 @@ services:
     # 80/443 and reverse-proxies here, same pattern as the pool dashboard.
     ports:
       - target: 80
-        published: "127.0.0.1:8880"
+        published: "8880"
+        host_ip: 127.0.0.1
       - target: 8080
-        published: "127.0.0.1:8888"
+        published: "8888"
+        host_ip: 127.0.0.1
       - target: 8081
-        published: "127.0.0.1:8889"
+        published: "8889"
+        host_ip: 127.0.0.1
