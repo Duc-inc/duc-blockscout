@@ -78,3 +78,6 @@ tasks_in_progress
 /temp
 
 openapi.yaml
+
+# Local deployment notes, not for GitHub
+/DEPLOYMENT_DUCROS.md
