@@ -11,10 +11,12 @@ services:
     environment:
       BACK_PROXY_PASS: ${BACK_PROXY_PASS:-http://backend:4000}
       FRONT_PROXY_PASS: ${FRONT_PROXY_PASS:-http://frontend:3000}
+    # Bound to loopback only: a host-level nginx + certbot terminates TLS on
+    # 80/443 and reverse-proxies here, same pattern as the pool dashboard.
     ports:
       - target: 80
-        published: 80
+        published: "127.0.0.1:8880"
       - target: 8080
-        published: 8080
+        published: "127.0.0.1:8888"
       - target: 8081
-        published: 8081
+        published: "127.0.0.1:8889"
