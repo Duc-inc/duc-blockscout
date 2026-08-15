@@ -29,7 +29,14 @@ services:
     links:
       - db:database
     environment:
+        # docker-compose.yml (loaded first) hardcodes these to
+        # host.docker.internal/chainId 1337 for local dev against your own
+        # node. environment: always wins over env_file, so these have to be
+        # re-overridden here (loaded second) to actually take effect.
         ETHEREUM_JSONRPC_VARIANT: 'geth'
+        ETHEREUM_JSONRPC_HTTP_URL: https://rpc.ducros.org:8545/
+        ETHEREUM_JSONRPC_TRACE_URL: https://rpc.ducros.org:8545/
+        CHAIN_ID: '271017'
 
   visualizer:
     extends:
