@@ -34,8 +34,8 @@ services:
         # node. environment: always wins over env_file, so these have to be
         # re-overridden here (loaded second) to actually take effect.
         ETHEREUM_JSONRPC_VARIANT: 'geth'
-        ETHEREUM_JSONRPC_HTTP_URL: https://rpc.ducros.org:8545/
-        ETHEREUM_JSONRPC_TRACE_URL: https://rpc.ducros.org:8545/
+        ETHEREUM_JSONRPC_HTTP_URL: https://rpc.ducros.org/
+        ETHEREUM_JSONRPC_TRACE_URL: https://rpc.ducros.org/
         CHAIN_ID: '271017'
 
   visualizer:
